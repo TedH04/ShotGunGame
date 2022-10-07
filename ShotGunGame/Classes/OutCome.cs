@@ -54,39 +54,8 @@ namespace ShotGunGame.Classes
             outCome.move = Move.Shotgun;
             return outCome;
         }
-        public OutCome Computer(OutCome outCome)
-        {
-            if(outCome.PcBullets < 0)
-            {
-                Reload(outCome);
-            }
-            if(outCome.PcBullets == 3)
-            {
-                ShotGun(outCome); 
-            }
-            else
-            {
-                Random rand = new Random();
-                int num = rand.Next(1,4);
-                if(num > 1)
-                {
-                    if (num == 1)
-                    {
-                        Shoot(outCome);
-                    }
-                    else if(num == 2)
-                    {
-                        Block(outCome);
-                    }
-                    else if(num == 3)
-                    {
-                        Reload(outCome);
-                    }
-                }
-            }
-            return outCome;
-        }
-        public static bool win(OutCome playerOne, OutCome Computer)
+        
+        public static bool win(OutCome playerOne, Computer Computer)
         {
             if(playerOne.move == Move.Shoot && Computer.move == Move.Block)
             {

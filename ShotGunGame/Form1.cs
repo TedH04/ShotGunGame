@@ -4,7 +4,7 @@ namespace ShotGunGame
     public partial class Form1 : Form
     {
         OutCome playerOne = new OutCome();
-        OutCome Computer = new OutCome();
+        Computer Computer = new Computer();
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace ShotGunGame
             if (playerOne.Bullets > 0)
             {
                 playerOne.Shoot(playerOne);
-                Computer.Computer(Computer);
+                Computer.ComputerOne(Computer);
                 CheckWin();
                 TextUpdate();
             }
@@ -32,7 +32,7 @@ namespace ShotGunGame
         private void btnBlock_Click(object sender, EventArgs e)
         {
             playerOne.Block(playerOne);
-            Computer.Computer(Computer);
+            Computer.ComputerOne(Computer);
             CheckWin();
             TextUpdate();
         }
@@ -40,7 +40,7 @@ namespace ShotGunGame
         private void btnReload_Click(object sender, EventArgs e)
         {
             playerOne.Reload(playerOne);
-            Computer.Computer(Computer);
+            Computer.ComputerOne(Computer);
             CheckWin();
             TextUpdate();
         }
@@ -51,7 +51,7 @@ namespace ShotGunGame
             {
                 TextUpdate();
                 playerOne.ShotGun(playerOne);
-                Computer.Computer(Computer);
+                Computer.ComputerOne(Computer);
                 CheckWin();
             }
         }
